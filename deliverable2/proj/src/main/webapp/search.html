@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyword Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Keyword Search</h1>
+    <form id="searchForm" action="DR2.html" method="get">
+        <label for="keyword">Enter a keyword:</label>
+        <input type="text" id="keyword" name="keyword">
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Create an Item</h2>
+    <button id="createItemButton">Create Item</button>
+
+    <script>
+        // Add an event listener to the Create Item button
+        document.getElementById("createItemButton").addEventListener("click", function () {
+            // Redirect to the item creation page (replace 'item-creation.html' with your actual page)
+            window.location.href = "createItem.html";
+        });
+    </script>
+</body>
+</html>

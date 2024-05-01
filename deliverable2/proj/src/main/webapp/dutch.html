@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auctioned Item Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bid-box">
+        <h3>Item Name: <span id="name"></span></h3>
+        <h3>Description: <span id="description"></span></h3>
+        <h3>Shipping Cost: $<span id="shippingCost"></span></h3>
+        <h3>Shipping Time: <span id="shippingTime"></span></h3>
+        <h3>Buy Now Price: $<span id="price"></span></h3>
+        
+       
+    </div>
+
+    <div class="bid-box">
+        
+        <button id="placeBidBtn">Buy Now</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+		
+		
+        // Fetch auction details and fill in the item info and highest bid info
+        $(document).ready(function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const itemID = urlParams.get('itemID');
+            
+        
+        
+            $.ajax({
+                url: "http://localhost:8080/proj/api/bid/dutch?itemID=" + itemID,
+                type: 'GET',
+                success: function (item) {
+                    // Fill in highest bid and bidder
+                    $("#name").text(item.name);
+                    $("#description").text(item.description);
+                    $("#shippingCost").text(item.shippingPrice);
+                    $("#shippingTime").text(item.shippingTime);
+                    var lowestValue = Math.min(item.price, item.highestBid || item.price);
+                    $("#price").text(lowestValue);
+                    $("#highestBidder").text(item.highestBidder || "No bids placed");
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+
+            // Event listener for placing a bid
+            $("#placeBidBtn").click(function () {
+                var bidAmount = parseFloat($("#price").val());
+                    // Send the bid to your server using AJAX
+                    $.ajax({
+                        url: "http://localhost:8080/proj/api/bid/placeDutchBid",
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ itemId: itemID, bidAmount: bidAmount }),
+                        success: function (response) {
+                            alert("bid successful"); // Display a success message
+                           //redirect to payment page
+                        },
+                        error: function (error) {
+                            console.log(error);
+                            alert("Bid placement failed. Please try again."); // Display an error message
+                        }
+                    });
+                }
+            );
+        });
+    </script>
+</body>
+</html>
