@@ -1,2 +1,2 @@
-# EECS4413Project
-EECS 4413 Project
+# E Commerce System
+Furniture auction e-commerce system using Java, HTML, Docker and Postman
