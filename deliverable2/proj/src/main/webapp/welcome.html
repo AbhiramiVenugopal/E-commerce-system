@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="welcome-container">
+    <h1>Welcome to Our Website!</h1>
+    <button onclick="redirectToSignIn()">Sign In</button>
+    <button onclick="redirectToSignUp()">Sign Up</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	function initializeContext() {
+        $.ajax({
+            url: "http://localhost:8080/proj/api/users",
+            type: 'GET',
+            success: function (data) {
+                // Handle the response data as needed
+                console.log("Context initialized:", data);
+            },
+            error: function (error) {
+                console.log("Error initializing context:", error);
+            }
+        });
+    }
+    
+     /*$(document).ready(function () {
+        initializeContext();
+    });
+    */
+    
+    function redirectToSignIn() {
+        // Redirect to the Sign In page
+        window.location.href = "http://localhost:8080/proj/login";
+    }
+
+    function redirectToSignUp() {
+        // Redirect to the Sign Up page
+        window.location.href = "http://localhost:8080/proj/signup";
+    }
+</script>
+
+</body>
+</html>

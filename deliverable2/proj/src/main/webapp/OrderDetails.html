@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>List Students</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Order Summary</h1>
+	</header>
+	<div class="container">
+
+		<p id="pDesc">Payment Method ID:</p>
+		<p id="payment"></p>
+
+		<p id="fnDesc">First Name: </p>
+		<p id="firstName"></p>
+
+		<p id="lnDesc">Last Name: </p>
+		<p id="lastName"></p>
+
+		<p id="emDesc">Email: </p>
+		<p id="email"></p>
+
+		<p id="adDesc">Address: </p>
+		<p id="address"></p>
+
+		<p id="iDesc">Item ID: </p>
+		<p id="item"></p>
+
+		<p id="iName">Item Name: </p>
+		<p id="itemName"></p>
+
+		<p id="coDesc">Total: </p>
+		<p id="cost"></p>
+
+		<p id="shDesc"><b>Delivery Time (in days):<b> </p>
+		<p id="shippingTime"></p>
+
+	</div>
+	<br>
+	
+	<button onclick="back()">Back to Main Page</button>
+
+	<footer>
+		<p></p>
+	</footer>
+
+	<script>
+		
+		//Global Params
+		const urlParams = new URLSearchParams(window.location.search);
+		const trId = urlParams.get('id');
+		const itemID = urlParams.get('item');
+		const userID = urlParams.get('user');
+
+		//Function for going back to the main page
+		function back()
+		{
+			window.location.href = "http://localhost:8080/StudentInformationSystem/search"
+		}
+		
+		// Function for getting card Data
+		function getCardData(trId, userID, itemID) {
+
+			$.ajax({
+				url: "http://localhost:8080/StudentInformationSystem/api/payment/order?id=" + trId
+					+ "&user=" + userID + "&item=" + itemID,
+				type: 'GET',
+				success: function (result) {
+					if (result === null) {
+						console.log("There is no data to be shown in the table.")
+					}
+					else {
+						card = result.cardNumber.toString();
+						privateCardNumber = card.substring(12);
+						itemid = result.itemID;
+						total = result.totalCost;
+
+						document.getElementById("payment").innerHTML += "***";
+						document.getElementById("payment").innerHTML += privateCardNumber;
+						document.getElementById("item").innerHTML += itemid;
+						document.getElementById("cost").innerHTML += total;
+					}
+				},
+				error: function (error) {
+					console.log("this Credit Card is already in the system.");
+				}
+			});
+		}
+
+
+		// Function for getting user data
+		function getUserData(userID) {
+
+			$.ajax({
+				url: "http://localhost:8080/StudentInformationSystem/api/users/" + userID,
+				type: 'GET',
+				success: function (result) {
+					if (result === null) {
+						console.log("There is no item to be shown.")
+					}
+					else {
+						document.getElementById("firstName").innerHTML += result.firstName;
+						document.getElementById("lastName").innerHTML += result.lastName;
+						document.getElementById("email").innerHTML += result.email;
+						document.getElementById("address").innerHTML += result.address;
+					}
+				},
+				error: function (error) {
+					console.log("Could not find any user with the provided UserID.");
+				}
+			});
+		}
+
+		// Function for getting item data
+		function getItemData(itemID) {
+
+			$.ajax({
+				url: "http://localhost:8080/StudentInformationSystem/api/items/" + itemID,
+				type: 'GET',
+				success: function (result) {
+					if (result === null) {
+						console.log("There is no item to be shown.")
+					}
+					else {
+						time = result.shippingTime;
+						itemName = result.name;
+
+						document.getElementById("shippingTime").innerHTML += time;
+						document.getElementById("itemName").innerHTML += time;
+					}
+				},
+				error: function (error) {
+					console.log("Could not find the item that you are trying to purchase.");
+				}
+			});
+		}
+
+		// MAIN
+		$(document).ready(function () {
+			getCardData(trId, userID, itemID);
+			getItemData(itemID);
+			getUserData(userID);
+		});
+	</script>
+</body>
+
+</html>

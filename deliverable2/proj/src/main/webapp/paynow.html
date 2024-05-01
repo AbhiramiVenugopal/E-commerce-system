@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Ended</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bid-box">
+        <h3>Item Name: <span id="name"></span></h3>
+        <h3>Description: <span id="description"></span></h3>
+        <h3>Price: $<span id="highestBid"></span></h3>
+       
+        
+    </div>
+    
+    <div class="shipping">
+		 <h3>Shipping Cost: $<span id="shippingCost"></span></h3>
+        <h3>Shipping Time: <span id="shippingTime"></span></h3>
+         <h3>Highest Bidder: <span id="highestBidder"></span></h3>
+	</div>
+
+    <div class="bid-box">
+        
+        <button id="payNowBtn">Pay Now</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+		
+		
+        // Fetch auction details and fill in the item info and highest bid info
+        $(document).ready(function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const itemID = urlParams.get('itemID');
+            $.ajax({
+                url: "http://localhost:8080/proj/api/bid/auctionEnded/" + itemID,
+                type: 'GET',
+                success: function (item) {
+                    // Fill in highest bid and bidder
+                    $("#name").text(item.name);
+                    $("#description").text(item.description);
+                    $("#shippingCost").text(item.shippingPrice);
+                    $("#shippingTime").text(item.shippingTime);
+                    $("#highestBid").text(item.highestBid);
+                    $("#highestBidder").text(item.highestBidder);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+
+            // Event listener for placing a bid
+           
+        });
+    </script>
+</body>
+</html>
