@@ -1,0 +1,1090 @@
+{
+	"info": {
+		"_postman_id": "378b94ae-573f-4619-91b5-d080510a102b",
+		"name": "Auction System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30700664"
+	},
+	"item": [
+		{
+			"name": "editable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userID\":\"10\", \"username\": \"sayed1000\", \"password\":\"Hello123\", \"email\":\"sayed1000@gmail.com\", \"firstName\" : \"sayed\", \"lastName\":\"mohammed\", \"address\" : \"north york\", \"phoneNumber\":\"2392935485\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"sayed100099jk\", \"password\":\"Hello123\", \"email\":\"sayed1000@gmail.com\", \"firstName\" : \"sayed\", \"lastName\":\"mohammed\", \"address\" : \"north york\", \"phoneNumber\":\"2392935485\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"abhi2000\", \"password\":\"Hello1234\", \"email\":\"abhi2000@gmail.com\", \"firstName\" : \"abhirami\", \"lastName\":\"Venugopal\", \"address\" : \"scarborough\", \"phoneNumber\":\"4897564459\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"ahmed3000\", \"password\":\"Hello12345\", \"email\":\"ahmed3000@gmail.com\", \"firstName\" : \"ahmed\", \"lastName\":\"El-Dib\", \"address\" : \"whitby\", \"phoneNumber\":\"2457458934\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"mahdiar4000\", \"password\":\"Hello123456\", \"email\":\"mahdiar4000@gmail.com\", \"firstName\" : \"mahdiar\", \"lastName\":\"Shoraka\", \"address\" : \"ajax\", \"phoneNumber\":\"2356780679\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user authentication: success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userName\": \"abc\", \"password\":\"abc123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user authentication: error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userName\": \"abc\", \"password\":\"abc1234\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user without address:error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userID\":\"40\", \"username\": \"mahdiar4000\", \"password\":\"Hello123456\", \"email\":\"mahdiar4000@gmail.com\", \"firstName\" : \"mahdiar\", \"lastName\":\"Shoraka\", \"phoneNumber\":\"2356780679\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user without password:error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userID\":\"40\", \"username\": \"mahdiar4000\", \"email\":\"mahdiar4000@gmail.com\", \"firstName\" : \"mahdiar\", \"lastName\":\"Shoraka\", \"address\" : \"ajax\", \"phoneNumber\":\"2356780679\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return list of all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return user based on id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user based on id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\": 10,\r\n    \"username\": \"ahmed3000\",\r\n    \"password\": \"Hello12345\",\r\n    \"email\": \"ahmed3000@gmail.com\",\r\n    \"firstName\": \"ahmed\",\r\n    \"lastName\": \"El-Dib\",\r\n    \"address\": \"san diego\",\r\n    \"phoneNumber\": \"2457458934\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creating user with same email:error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userID\":\"10\", \"username\": \"sayed1000\", \"password\":\"Hello123\", \"email\":\"sayed1000@gmail.com\", \"firstName\" : \"sayed\", \"lastName\":\"mohammed\", \"address\" : \"north york\", \"phoneNumber\":\"2392935485\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creating user with same username:error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userID\":\"10\", \"username\": \"sayed100099jk\", \"password\":\"Hello123\", \"email\":\"sayed999@gmail.com\", \"firstName\" : \"sayed\", \"lastName\":\"mohammed\", \"address\" : \"north york\", \"phoneNumber\":\"2392935485\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create auction item 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"vintage chair wood 2\", \"description\": \"1987 made in california 2\", \"auctionType\":\"Forward\", \"price\":\"2000\", \"shippingPrice\" : \"20\", \"auctionEndTime\":\"2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create auction item 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"vintage earings\", \"description\": \"1983 made in california 2\", \"auctionType\":\"Dutch\", \"price\":\"2500\", \"shippingPrice\" : \"30\", \"auctionEndTime\":\"37\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create auction item 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"vintage sofa\", \"description\": \"1956 made in italy\", \"auctionType\":\"Forward\", \"price\":\"2500\", \"shippingPrice\" : \"10\", \"auctionEndTime\":\"3\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create auction item 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"crystal vase\", \"description\": \"1882 made in italy\", \"auctionType\":\"Dutch\", \"price\":\"2002\", \"shippingPrice\" : \"25\", \"auctionEndTime\":\"4\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create auction item without auction end time: failure",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"crystal vase\", \"description\": \"1882 made in italy\", \"auctionType\":\"Dutch\", \"price\":\"2002\", \"shippingPrice\" : \"25\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return list of all items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return item based on id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search item by keyword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items/search/diadem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items",
+						"search",
+						"diadem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete aucton item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/items/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"items",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get transaction by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/payment/order?id=23525",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"payment",
+						"order"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "23525"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transaction 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Field</th>",
+							"        <th>Value</th>",
+							"    </tr>",
+							"    ",
+							"    <tr>",
+							"        <td>Status</td>",
+							"        <td>{{response.status}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Headers</td>",
+							"        <td>{{response.headers}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Body</td>",
+							"        <td>{{response.body}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    var response = {",
+							"        status: pm.response.code,",
+							"        headers: pm.response.headers,",
+							"        body: pm.response.text()",
+							"    };",
+							"",
+							"    return {response: response};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cardNumber\": \"111111111111111111\",\n    \"cardHolderName\": \"Alex\",\n    \"expDate\": \"2511\",\n    \"cvv\": \"111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/payment/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"payment",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transaction 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Field</th>",
+							"        <th>Value</th>",
+							"    </tr>",
+							"    ",
+							"    <tr>",
+							"        <td>Status</td>",
+							"        <td>{{response.status}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Headers</td>",
+							"        <td>{{response.headers}}</td>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>Body</td>",
+							"        <td>{{response.body}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    var response = {",
+							"        status: pm.response.code,",
+							"        headers: pm.response.headers,",
+							"        body: pm.response.text()",
+							"    };",
+							"",
+							"    return {response: response};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cardNumber\": \"111111111111112222\",\n    \"cardHolderName\": \"harry\",\n    \"expDate\": \"2211\",\n    \"cvv\": \"444\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/payment/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"payment",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update transaction",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cardNumber\": 7070707777777777,\n    \"cardHolderName\": \"A\",\n    \"expDate\": \"1111\",\n    \"cvv\": 111,\n    \"totalCost\": 535.97,\n    \"userID\": 1,\n    \"itemID\": 5,\n    \"seller\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/payment/24870",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"payment",
+						"24870"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/payment/22049",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"payment",
+						"22049"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get list of forward bids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/bid/forward",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"bid",
+						"forward"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place a forward bid: less than current bid : assume current bid is 2000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bidAmount\" : \"1500\", \"itemId\" : \"12\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/bid/placeForwardBid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"bid",
+						"placeForwardBid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place a forward bid : equal to current bid: assume current bid is 2000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bidAmount\" : \"2000\", \"itemId\" : \"12\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/bid/placeForwardBid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"bid",
+						"placeForwardBid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place a forward bid : greater than current bid: assume current bid is 2000 Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bidAmount\" : \"2900\", \"itemId\" : \"12\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/bid/placeForwardBid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"bid",
+						"placeForwardBid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get list of dutch bids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proj/api/bid/dutch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"bid",
+						"dutch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place dutch bid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bidAmount\" : \"4\", \"itemId\" : \"12\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proj/api/bid/placeDutchBid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proj",
+						"api",
+						"bid",
+						"placeDutchBid"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
